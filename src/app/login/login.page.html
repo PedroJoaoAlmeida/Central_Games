@@ -1,0 +1,17 @@
+<ion-content class="container">
+  <ion-title class="title">Login</ion-title>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">Entrar</ion-button>
+    <p>Não tem Cadastro?<ion-button expand="full" (click)="redirectToCadastro()" class="button1">Clique aqui</ion-button></p>
+  </form>
+</ion-content>

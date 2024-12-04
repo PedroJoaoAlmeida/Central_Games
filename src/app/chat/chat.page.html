@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pagina-inicial" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Comunidade</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="messages">
+    <div *ngFor="let message of messages" [ngClass]="['message-container', message.class]">
+      <strong class="user-name">{{ message.userName }}:</strong>
+      <div class="message-bubble">
+        {{ message.content }}
+      </div>
+    </div>
+  </div>
+
+  <ion-footer>
+    <ion-item lines="none" class="input-footer">
+      <ion-input [(ngModel)]="messageInput" placeholder="Digite sua mensagem" class="input-message"></ion-input>
+      <ion-button fill="clear" (click)="sendMessage()">
+        <ion-icon name="send" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-footer>
+</ion-content>

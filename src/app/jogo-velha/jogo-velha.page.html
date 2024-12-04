@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Jogo da Velha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="board">
+    <div *ngFor="let cell of board; let i = index" 
+         class="cell" 
+         (click)="makeMove(i)">
+      {{ cell }}
+    </div>
+  </div>
+
+  <div *ngIf="winner" class="winner">
+    Vencedor: {{ winner }}!
+  </div>
+
+  <ion-button expand="full" (click)="resetGame()">Reiniciar Jogo</ion-button>
+  <ion-button expand="full" (click)="VoltarMenu()">Menu Principal</ion-button>
+</ion-content>

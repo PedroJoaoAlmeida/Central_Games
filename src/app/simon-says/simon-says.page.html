@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Simon Says</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding simon-game">
+  <h1>Simon Says</h1>
+  <div class="container">
+    <div class="color" id="green" (click)="onColorClick('green')"></div>
+    <div class="color" id="red" (click)="onColorClick('red')"></div>
+    <div class="color" id="yellow" (click)="onColorClick('yellow')"></div>
+    <div class="color" id="blue" (click)="onColorClick('blue')"></div>
+  </div>
+  <ion-button id="start-btn" (click)="startGame()">Iniciar Jogo</ion-button>
+  <h2 id="status">{{ statusMessage }}</h2>
+  <h2 id="score">Pontuação: {{ score }}</h2>
+  <h2 id="high-score">Melhor Pontuação: {{ highScore }}</h2>
+  <ion-button id="voltar" (click)="goToMenu()">Voltar para o Menu</ion-button>
+</ion-content>

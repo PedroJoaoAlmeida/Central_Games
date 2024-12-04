@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Minhas Comunidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list id="lista-comunidades">
+    <ion-item *ngIf="comunidades.length === 0">
+      <p>Você ainda não possui comunidades.</p>
+    </ion-item>
+    <ion-item *ngFor="let comunidade of comunidades">
+      <ion-label>{{ comunidade.nome }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-input #nome placeholder="Nome da Comunidade"></ion-input> <!-- Referência ao input -->
+  </ion-item>
+  <ion-item>
+    <ion-input #descricao placeholder="Descrição"></ion-input> <!-- Referência ao input -->
+  </ion-item>
+  <ion-button (click)="criarNovaComunidade(nome.value, descricao.value)">Criar Comunidade</ion-button>
+</ion-content>

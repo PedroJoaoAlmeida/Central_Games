@@ -1,0 +1,7 @@
+{
+  "name": "Central_Games",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

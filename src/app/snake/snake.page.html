@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Snake Game</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="game-container">
+    <h1>Snake Game</h1>
+    <canvas id="gameCanvas"></canvas>
+    <ion-button expand="block" id="reset-button" (click)="resetGame()">Resetar Jogo</ion-button>
+    <ion-button expand="block" id="home-button" (click)="goToHome()">Voltar à Página Inicial</ion-button>
+    <p id="message">{{ gameMessage }}</p>
+  </div>
+</ion-content>

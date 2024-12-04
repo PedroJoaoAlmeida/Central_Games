@@ -1,0 +1,263 @@
+ion-content{
+  margin: 0;
+  padding: 0;
+
+
+.container {
+    background-color: #e8f1f2;
+       
+  }
+
+  ion-toolbar{
+    --background: #13293D;
+    color: white;
+  }
+  
+  .inicio {
+    background: linear-gradient(45deg, #21476a 0%, #247ba0 50%, #3da3cf 100%);
+    padding: 10px;
+  }
+  
+  #p-inicio {
+    color: #e8f1f2;
+    font-weight: 750;
+    font-size: 25px;
+  }
+  
+  .scroll-container {
+    display: flex;
+    overflow-x: auto; /* Ativa a rolagem horizontal */
+    gap: 10px; /* Espaçamento entre os itens */
+    padding: 10px;
+    scroll-behavior: smooth; /* Suaviza o scroll */
+    
+    /* Adicione o seguinte para garantir a barra de rolagem */
+    scrollbar-width: thin; /* Para navegadores que suportam */
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* Cor da barra de rolagem */
+  }
+  
+  /* Estilos para navegadores baseados em WebKit (Chrome, Safari) */
+  .scroll-container::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* Cor da barra */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+  
+  .scroll-container::-webkit-scrollbar-track {
+    background: transparent; /* Fundo da área da barra de rolagem */
+  }
+  
+  .title-game{
+    color: #000
+  }
+
+  #sidebar{
+    background: #13293D;
+  }
+  
+  .item2{
+    --background: #247ba0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .items2:hover {
+    background-color: #3da3cf;
+  }
+  
+
+  .sidebar {
+    height: 100%;
+    width: 300px; /* Ajuste o tamanho conforme necessário */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+    transition: transform 0.3s ease; /* Transição suave para abrir/fechar */
+    transform: translateX(-100%); /* Oculta a sidebar por padrão */
+    z-index: 10; /* Garantir que fique acima de outros elementos */
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); /* Exibe a sidebar quando aberta */
+  }
+  
+  .sidebar-header{
+    margin-top: 0;
+    text-align: right;
+  }  
+  
+  #close-btn {
+    margin-top: 0;
+    text-align: right;
+    background-color: #247ba0;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #menu-icon{
+    margin-top: 0;
+    background-color: #247ba0;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-info {
+    padding: 20px; /* Reduz o padding para uma melhor apresentação */
+    text-align: center;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px; /* Aumenta um pouco a altura */
+    border-radius: 50%;
+    margin-bottom: 10px; /* Ajusta o espaçamento */
+  }
+  
+  .custom-upload-btn {
+    background-color: #247ba0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-upload-btn:hover {
+    background-color: #3da3cf;
+  }
+  
+  #p-mais {
+    background-color: #13293D;
+    color: white;
+    padding: 10px;
+    background-size: cover;
+    margin: 0; 
+  }
+  
+  #p-mais h3 {
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    text-align: center; 
+  }
+
+  #game-list {
+    padding: 0; /* Remove qualquer padding extra */
+    margin: 0;  /* Remove qualquer margem */
+  }
+  
+  #game-list h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #13293D;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Estilo para o backdrop (fundo escurecido) */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+  }
+  
+  .backdrop.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  ion-card-content{
+    background-color: #13293D;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 8px;
+    width: 200px;
+    height: 115px;
+  }
+
+  ion-card-content ion-button{
+    margin-top: 20px;
+    --background: #247ba0;
+  }
+  
+  .game-card {
+    flex: 0 0 auto; /* Faz os itens não encolherem ou crescerem */
+    width: 200px; /* Defina a largura que desejar para os cartões */
+    height: 270px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    // padding: 10px;
+  }
+  
+  .game-card img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+
+  .game-description {
+    margin: 10px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    // background-color: #f9f9f9;
+    background: linear-gradient(45deg, #21476a 0%, #247ba0 50%, #3da3cf 100%);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+  
+    p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: white;
+    }
+  
+    ion-button {
+      margin-top: 10px;
+      --background: #247ba0;
+    }
+  }
+  
+}

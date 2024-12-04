@@ -1,0 +1,71 @@
+ion-content {
+    --background: #E8F1F2; /* Cor de fundo do ion-content */
+    --background1: #13293D; /* Variável de cor */
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    margin-top: 30px;
+    text-shadow: 1px 2px 2px #000;
+    
+  }
+  
+  .form {
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+  
+  ion-item {
+    --background: var(--background);
+    --inner-border-width: 0px; /* Remove a linha inferior */
+    --border-color: transparent; /* Torna a borda invisível */
+  }
+  
+  .item {
+    color: #000;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    border: solid 2px #000;
+    border-radius: 5px;
+  }
+  
+  .button {
+    width: 70%;
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    font-weight: bold;
+    --background: var(--background1); /* Cor de fundo personalizada para o botão */
+    color: white !important; /* Garante que o texto do botão seja branco */
+    margin-top: 2rem;
+  }
+  
+  .button::part(native) {
+    border-radius: 0.6rem; /* Aplica o border-radius ao ion-button */
+    padding: 15px;
+  }
+  
+  .button:hover::part(native) {
+    --background: #21476a; /* Muda a cor de fundo ao passar o mouse */
+  }
+
+  .button1{
+    width: 50%;
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    font-weight: bold;
+    --background: var(--background1); /* Cor de fundo personalizada para o botão */
+    color: white !important; /* Garante que o texto do botão seja branco */
+    margin-top: 1rem;
+  }
+
+p{
+    text-align: center;
+    color: #000;
+    margin-top: 30px;
+}
+
+  

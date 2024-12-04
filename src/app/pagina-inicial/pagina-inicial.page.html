@@ -1,0 +1,80 @@
+<ion-content class="container">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button id="menu-icon" (click)="toggleSidebar()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>GameStation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div id="sidebar" class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+    <div class="sidebar-header">
+      <ion-button id="close-btn" (click)="toggleSidebar()" fill="clear" color="light">Fechar</ion-button>
+    </div>
+    
+    
+    <div class="profile-info">
+      <img src="{{ profileImage }}" alt="Imagem de perfil" class="profile-img" id="profileImage" /><br>
+      
+      <!-- Label que irá se comportar como um botão -->
+      <button type="button" class="custom-upload-btn" (click)="triggerFileInput()">Alterar Imagem</button>
+      
+      <!-- Input de arquivo oculto -->
+      <input type="file" id="perfil" accept="image/*" (change)="onFileSelected($event)" style="display: none;" />
+      
+      <h2 id="userName">{{ userName }}</h2>
+      <p id="userEmail">{{ userEmail }}</p>
+    </div>
+    
+
+
+    <hr>
+    <div class="profile-info">
+      <ion-button class="item2" routerLink="/chat">Comunidade</ion-button>
+      <ion-button (click)="logout()" class="item2" >Sair</ion-button>
+    </div>
+  </div>
+  
+  
+
+  <!-- Backdrop para escurecer a tela quando o sidebar estiver aberto -->
+  <div class="backdrop" [ngClass]="{'visible': isSidebarOpen}" (click)="toggleSidebar()"></div>
+
+  <!-- Conteúdo Principal -->
+  <div class="inicio">
+    <p id="p-inicio">Jogos Populares</p>
+    <div class="scroll-container">
+      <ion-card *ngFor="let game of popularGames" class="game-card">
+        <img [src]="game.image" alt="image" />
+        <ion-card-header>
+          <ion-card-title class="title-game">{{ game.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button [routerLink]="game.link">Jogar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <section id="game-list">
+    <h3 id="p-mais">Mais Jogos</h3>
+    <ion-list>
+      <ng-container *ngFor="let game of otherGames; let i = index">
+        <ion-item (click)="toggleDescription(i)">
+          <b>{{ game.name }}</b>
+        </ion-item>
+  
+        <!-- Verifica se a descrição atual está visível -->
+        <div *ngIf="visibleDescriptionIndex === i" class="game-description">
+          <h3>{{ game.name }}</h3>
+          <p>{{ game.description }}</p>
+          <ion-button fill="solid" [routerLink]="game.link">Jogar</ion-button>
+        </div>
+      </ng-container>
+    </ion-list>
+  </section>
+</ion-content>

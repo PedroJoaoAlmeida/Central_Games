@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jogo da Memória</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <p id="timer">Tempo restante: <span id="time">{{ timeRemaining }}</span> segundos</p>
+    <div class="game-board">
+      <div 
+        class="card" 
+        *ngFor="let card of shuffledCards" 
+        [class.flipped]="card.flipped" 
+        (click)="flipCard(card)"
+      >
+        <div class="card-inner">
+          <div class="card-front"></div>
+          <div class="card-back">
+            <img [src]="'assets/img/' + card.img" [alt]="card.name" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-button class="button" expand="full" (click)="resetGame()">Resetar Jogo</ion-button>
+    <ion-button class="button2" expand="full"  routerLink="/pagina-inicial">Voltar à Página Inicial</ion-button>
+    <p id="message">{{ message }}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+ion-content {
+  --background: #E8F1F2; /* Define a cor de fundo diretamente no ion-content */
+  --background1: #13293D; /* Variável de cor */
+  --gradient: linear-gradient(45deg, #21476a 0%, #247ba0 50%, #3da3cf 100%);
+  --color: #247ba0;
+
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  height: 100%; /* Garante que o ion-content cubra a tela inteira */
+}
+
+#container {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column; /* Garante que os botões fiquem um embaixo do outro */
+  gap: 20px; /* Espaço entre os botões */
+  width: 100%;
+  margin-top: 8rem;  
+}
+
+.img {
+  width: 100%; /* Ajuste conforme o tamanho desejado da imagem */
+  margin-bottom: 30px; /* Espaço entre a imagem e os botões */
+}
+
+.button {
+  width: 70%; 
+  margin: 0 auto; /* Centraliza o botão horizontalmente */  
+  font-weight: bold;
+  --background: var(--background1); /* Define a cor de fundo personalizada usando a variável */
+  color: white !important; /* Garante que o texto do botão seja branco */
+}
+
+.button::part(native) {
+  border-radius: 0.6rem; /* Aplica o border-radius ao ion-button */
+  padding: 15px;
+}
+
+.button:hover::part(native) {
+  --background: #21476a; /* Muda a cor de fundo ao passar o mouse */
+}

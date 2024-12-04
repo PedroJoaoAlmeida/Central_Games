@@ -1,0 +1,90 @@
+ion-header{
+  --background: #13293D;
+}
+
+ion-toolbar{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  --background: #13293D;
+  color: white;
+}
+
+ion-content{
+  --background: #13293D;
+}
+
+/* Ajuste da área de mensagens */
+#messages {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  height: calc(100vh - 56px - 70px); /* Altura ajustada */
+  overflow-y: auto; /* Permite rolagem */
+}
+
+.message-container {
+  margin-bottom: 10px;
+  max-width: 75%; /* Limita a largura das mensagens */
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+/* Mensagens recebidas (lado esquerdo) */
+.message-left {
+  align-self: flex-start;
+  background-color: #21476a; /* Cor para mensagens recebidas */
+  color: white;
+  border-top-left-radius: 0; /* Estilo do balão semelhante ao WhatsApp */
+}
+
+/* Mensagens enviadas (lado direito) */
+.message-right {
+  align-self: flex-end;
+  background-color: #247ba0; /* Cor para mensagens enviadas */
+  color: white;
+  border-top-right-radius: 0; /* Estilo do balão semelhante ao WhatsApp */
+}
+
+.user-name {
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.message-bubble {
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: inherit; /* Herda a cor da mensagem */
+}
+
+/* Estilo para o footer da input de mensagem */
+.input-footer {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #f0f0f0; /* Cor de fundo da barra de input */
+}
+
+.input-message {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+ion-button {
+  --background: none; /* Remove o fundo do botão */
+  --padding-start: 0;
+}
+
+ion-icon[name="send"] {
+  color: #3da3cf; /* Cor do ícone de envio */
+  font-size: 20px;
+}
